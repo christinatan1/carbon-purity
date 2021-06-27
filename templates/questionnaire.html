@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+{% block title %}Questionnaire Page{% endblock %}
+
+{% block flashing %}
+    {% with messages = get_flashed_messages()%}
+        {% if messages %}
+            {% for msg in messages %}
+                <div class="alert">
+                <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                {{msg}}
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+{% endblock %}
+
+{% block content %}
+
+<!-- place HTML in here -->
+<h1>I have recently...</h1>
+
+<div class = "questions">
+
+    <form action="/questionnaire" method="POST" id="selections">
+        <input type="checkbox" id="q1" name="q" value="Bag">
+        <label for="q1"> Used a plastic bag </label><br>
+
+        <input type="checkbox" id="q2" name="q" value="Straw">
+        <label for="q2"> Used a plastic straw </label><br>
+
+        <input type="checkbox" id="q3" name="q" value="Fashion">
+        <label for="q3"> Shopped at at least one fast fashion store </label><br>
+
+        <input type="checkbox" id="q4" name="q" value="Amazon">
+        <label for="q4"> Bought something on Amazon </label><br>
+
+        <input type="checkbox" id="q5" name="q" value="Bottle">
+        <label for="q5"> Bought/drank from a plastic water bottle </label><br>
+
+        <input type="checkbox" id="q6" name="q" value="Washing">
+        <label for="q6"> Used the warm setting on the washing machine to wash my clothes </label><br>
+
+        <input type="checkbox" id="q7" name="q" value="Lights">
+        <label for="q7"> Left the lights on when I left my room for a long period of time </label><br>
+
+        <input type="checkbox" id="q8" name="q" value="Recycle">
+        <label for="q8"> Threw extra paper/bottles/cans directly in the trash  </label><br>
+
+        <input type="checkbox" id="q9" name="q" value="Food">
+        <label for="q9"> Thrown extra food directly to trash  </label><br>
+
+        <input type="checkbox" id="q10" name="q" value="Electronics">
+        <label for="q10"> Kept my electronics’ plugged in the wall socket after using them  </label><br>
+
+        <input type="checkbox" id="q11" name="q" value="Meals">
+        <label for="q11"> Bought take-out or ate outside </label><br>
+
+        <input type="checkbox" id="q12" name="q" value="Grocery">
+        <label for="q12"> Bought fruits and vegetables from chain grocery stores </label><br>
+
+        <input type="checkbox" id="q13" name="q" value="Tires">
+        <label for="q13"> Used not fully inflated tires </label><br>
+
+        <input type="checkbox" id="q14" name="q" value="Clothes">
+        <label for="q14"> Used a clothes dryer on the warm heat setting </label><br>
+
+        <input type="checkbox" id="q15" name="q" value="Dishwasher">
+        <label for="q15"> Ran a dishwasher/laundry cycle before the load is full </label><br>
+
+        <input type="checkbox" id="q16" name="q" value="Meat">
+        <label for="q16"> Ate meat, such as chicken, beef, lamb, and pork </label><br>    
+
+        <input type="checkbox" id="q17" name="q" value="Shower">
+        <label for="q17"> Took a shower longer than 15 minutes </label><br>    
+
+        <input type="checkbox" id="q18" name="q" value="Drove">
+        <label for="q18"> Individually drove to all of my destinations </label><br>    
+
+        <input type="checkbox" id="q19" name="q" value="Bulbs">
+        <label for="q19"> Replaced light bulbs with standard incandescent light bulbs  </label><br>    
+
+        <input type="checkbox" id="q20" name="q" value="Caps">
+        <label for="q20"> Kept the bottle caps on when recycling plastic bottles </label><br>    
+
+        <div class="buttons">
+            <input type="submit" value="Submit">
+            <button type="reset">Uncheck all</button>
+        </div>
+        
+    </form>
+
+</div>
+{% endblock %}

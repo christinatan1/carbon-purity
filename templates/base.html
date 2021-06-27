@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Lexend&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital@1&family=Lexend:wght@400;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/base.css">
+
+    <title>{% block title %}{% endblock %}</title>
+</head>
+
+<body font color="color:#637074">
+
+    <a href="/home"> <img src= "/static/CarbonPurity.png" alt="logo" class="logo"></a>
+    <div class="topnav">
+        <a href="/dashboard">Dashboard</a>
+        <a href="/questionnaire">Questionnaire</a>
+        <a href="/login">Login</a>
+        <a href="/logout">Logout</a>
+    </div>
+    <center>{% block flashing %}{% endblock %}</center>
+    <center>{% block content %}{% endblock %}</center>
+</body>
+</html>

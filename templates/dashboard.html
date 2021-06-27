@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+
+{% block flashing %}
+    {% with messages = get_flashed_messages()%}
+        {% if messages %}
+            {% for msg in messages %}
+                <div class="alert">
+                <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                {{msg}}
+                </div>
+                <br>
+                <br>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+{% endblock %}
+
+<!-- -score -->
+<!-- -last checked in -->
+
+{% block content %}
+    
+    {% if username == None: %}
+        <h2><strong> Welcome to Dashboard {{username}}! </strong></h2>
+        <h2>Please log in</h2>
+    {% else %}
+    <div class = "dash_info"> 
+        <h2>  Welcome  to Dashboard {{username}}! </h2>
+        {% if not daysPassed==None: %}
+            {% if score >= 90 %}
+                <h2 class="score" style="color:rgba(147, 218, 147, 0.632);"> Carbon Purity Score: {{score}} </h2>
+            {% elif score >= 80 %}
+                <h2 class="score" style="color:rgba(255, 255, 0, 0.79);"> Carbon Purity Score: {{score}} </h2>
+            {% elif score >= 65 %}
+                <h2 class="score" style="color:rgba(255, 166, 0, 0.803);"> Carbon Purity Score: {{score}} </h2>
+            {% else %}
+                <h2 class="score" style="color:rgba(255, 36, 36, 0.413);"> Carbon Purity Score: {{score}} </h2>
+            {% endif %}
+            <h2> Time passed since last check-in: {{daysPassed}} days {{hoursPassed}} hours {{minutesPassed}} minutes</h2>
+        {% else %}
+            <h2>Please fill out the questionnaire!</h2>
+        {% endif %}
+    {% endif %}
+    </div>
+    <br><br>
+    <div class = "additional_info">
+        {% if score>50: %}
+            <p>
+                Keep it up! Your current score is <b>{{score}} </b> and we admire your efforts in reducing your carbon footprint
+                and taking care of the planet. We still encourage you to take the questionnaire often to track your progress and
+                ensure you are still on track!
+            </p>
+
+        {% else %}
+            <p>
+                Oh no! our questionnaire tells us you are not doing your best to reduce your carbon footprint. You can minimize 
+                your carbon footprint and help the environment in many different ways. Whether at home, work, school, or while you travel, 
+                small changes can add up. We encourage you to take the questionnaire more often to track your progress one step at a time!
+            </p>
+
+        {% endif %}
+            <br>
+
+        <h2 class="bold"> Why do I need to reduce my carbon footprint? </h2>
+        <p>
+            By lowering your carbon footprint, you can help contribute to the overall reduction of greenhouse gas emissions. In our fight against 
+            climate change, everyone making small adjustments can lead to big results. It’s not just about the environment either; reducing your 
+            carbon footprint can help you live a healthier lifestyle, as well as save you money. Whether it’s cleaner air, a healthier diet, or 
+            reduced energy bills, these benefits of reducing your carbon footprint also mean you’re doing your bit to combat climate change. 
+        </p>
+
+        <img src="/static/carbonfootprint.jpg" alt="Art illustrating everyone's carbon footprint"
+            width="500"
+            height=auto
+            class="img">
+        
+        <h2 class = "bold"> How to reduce your carbon footprint at home </h2>
+        <ul>
+            <li>Insulate your home: Heating your living space can be an expensive and energy-intensive process. By insulating places like your loft 
+                and walls, you can make sure your home retains heat during the winter and stays cool in summer. It means you’ll use less energy, 
+                reducing your carbon footprint and your household bills.  </li>
+
+            <li> Switch to renewables: Energy providers around the world are now offering greener tariffs. By switching to a company that provides 
+                electricity from solar, wind, or hydroelectric energy, you can reduce your household emissions and save money on your energy bills. 
+                You could even install solar panels if they’re readily available where you live. </li>
+
+            <li> Change your diet: The food we eat can have a significant impact on the environment. For example, meat and dairy products require a 
+                lot of land, water and energy to produce. They also create a lot of methane, a greenhouse gas. What’s more, food shipped from overseas 
+                uses a lot more resources than local produce. </li>
+
+            <li> Go digital: It’s never been easier to collaborate with others online. Whether through sharing documents using cloud storage or video 
+                conferencing instead of travelling, you can reduce your waste and emissions. </li>
+            
+            </ul>
+
+        <br><br>
+
+        <h3> About this website </h3>
+        <p class="about">
+            Created by Sharon Zou and Christina Tan <br>
+            This website was created as an entertaining way to spread awareness about the environment, specifically the importance of reducing one's carbon footprint.
+            New users can create an account on the website and take the questionnaire as frequently as they'd like and track their progress in maintaining their
+            score. This score will be saved in their account, allowing the user to see their previous score and the time elapsed since their last score.
+            
+        </p>
+
+    </div>
+
+
+
+<!-- add helpful tips to reduce footprint here: -->
+
+
+{% endblock %}

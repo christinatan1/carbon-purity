@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %} Login Page {% endblock %}
+{% block flashing %}
+    {% with messages = get_flashed_messages()%}
+        {% if messages %}
+            {% for msg in messages %}
+
+                <div class="alert">
+                <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                {{msg}}
+                </div>
+
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+{% endblock %}
+
+{% block content %}
+<form action="" method="POST">
+    <p>Username:</p>
+    <p><input type="text" name="username" /></p>
+    <p>Password:</p>
+    <p><input type="password" name="password" /></p>
+    <p><input type="submit" name="submit"/></p>
+    <p class="bold">Don't have a Carbon Purity Account?</p>
+    <a href="/create"> Create Account </a>
+</form>
+{% endblock %}

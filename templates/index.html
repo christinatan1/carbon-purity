@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Home Page{% endblock %}
+
+{% block flashing %}
+    {% with messages = get_flashed_messages()%}
+        {% if messages %}
+            {% for msg in messages %}
+
+                <div class="alert">
+                <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                {{msg}}
+                </div>
+
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+{% endblock %}
+
+{% block content %}
+<!-- place HTML in here -->
+<h1 class="welcome"> Welcome to Carbon Purity</h1>
+<p>We are here to help you track how well you're playing your part in helping the environment!</p>
+<img src= "/static/LargeLogo.png" alt="bigLogo" class="biglogo" width="400">
+{% endblock %}

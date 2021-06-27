@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}Score Page{% endblock %}
+
+{% block flashing %}
+    {% with messages = get_flashed_messages()%}
+        {% if messages %}
+            {% for msg in messages %}
+                <div class="alert">
+                <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                {{msg}}
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+{% endblock %}
+
+{% block content %}
+<h1>Your score: </h1>
+
+    {% if score >= 90 %}
+        <h2 class="score" style="color:rgba(147, 218, 147, 0.632);"> Carbon Purity Score: {{score}} </h2>
+    {% elif score >= 80 %}
+        <h2 class="score" style="color:rgba(255, 255, 0, 0.79);"> Carbon Purity Score: {{score}} </h2>
+    {% elif score >= 65 %}
+        <h2 class="score" style="color:rgba(255, 166, 0, 0.803);"> Carbon Purity Score: {{score}} </h2>
+    {% else %}
+        <h2 class="score" style="color:rgba(255, 36, 36, 0.413);"> Carbon Purity Score: {{score}} </h2>
+    {% endif %}
+    <form action="/score/<score>" method="POST" id="return">
+        <div class="buttons">
+            <input type="submit" value="Return to Dashboard">
+        </div>
+    </form>
+
+{% endblock %}

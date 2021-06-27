@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital@1&family=Lexend:wght@400;700&display=swap');
+
+body {
+    font-family: 'Lexend', sans-serif;
+    color:#f7f5f5;
+    background-color:#596453;
+}
+
+.logo {
+  width:100px;
+  /* padding-top:0px; */
+  padding-left:20px;
+}
+
+.topnav {
+    background-color: #596453;
+    overflow: hidden;
+    text-align:center;
+    font-family: "Lexend", sans-serif;
+    padding: 14px;
+    float:right;
+    color:#E7DFC6;
+    display: block;
+    font-size:110%;
+    word-spacing: 2em;
+    padding-top:25px;
+  }
+
+  .topnav > ul{
+    padding-left:30px;
+    padding-right:30px;
+  }
+
+  a:link {
+    color: #E7DFC6; 
+    background-color: transparent; 
+    text-decoration: none;
+  }
+  
+  a:visited {
+    color: rgb(174, 153, 121);
+    background-color: transparent;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: rgba(252, 141, 44, 0.208);
+    background-color: transparent;
+    text-decoration: underline;
+  }
+  
+  a:active {
+    color: rgb(193, 181, 174);
+    background-color: transparent;
+    text-decoration: underline;
+  }
+
+  .questions{
+      background-color: rgb(182, 148, 128);
+      width: 30em;
+      text-align: left;
+      padding: 14px;
+      border-radius: 25px;
+  }
+
+  .dash_info{
+    width: 50em;
+    height: 12em;
+    background-color: #839680;
+    padding: 14px;
+    border-radius: 25px;
+  }
+
+  .additional_info{
+    width: 50em;
+    height: 75em;
+    background-color: #BAA898;
+    padding: 15px;
+    border-radius: 25px;
+    font-size: 20px;
+    padding-left: 40px;
+    text-align: left;
+  }
+
+  .welcome {
+    padding: top -10px;
+    font-size: 250%;
+  }
+
+  .alert {
+    padding: 10px;
+    background-color: #90c6ff9f;
+    color: white;
+  }
+  
+  .closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .closebtn:hover {
+    color: black;
+  }
+
+  /* .score {
+    color:rgba(255, 36, 36, 0.584);
+    color:rgba(255, 166, 0, 0.803);
+    color:rgba(255, 255, 0, 0.79);
+    color:rgba(147, 218, 147, 0.632);
+  }  */
+
+  .img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .bold{
+    font-weight:bold;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    top: 50%;
+    left: 50%;
+  }
+
+  .about{
+    font-size:11;
+  }
